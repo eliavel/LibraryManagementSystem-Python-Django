@@ -1,0 +1,19 @@
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Local SQLite database (prevents from overwriting each other's test data)
+db.sqlite3
+
+# Environment variables (install ka ng sarili mo dahil hindi ito gagana lmao, sundan mo yung .readme)
+.env
+
+# IDE and OS clutter
+.vscode/
+.idea/
+.DS_Store
