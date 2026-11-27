@@ -1,0 +1,24 @@
+{% extends 'libraryapp/base.html' %}
+
+{% block content %}
+    <h2>Library Catalog</h2>
+    <p>Welcome to the dashboard. Here are the currently tracked books:</p>
+    
+    <hr>
+    <ul>
+        {% for book in books %}
+            <li style="margin-bottom: 10px;">
+                <strong>{{ book.book_name }}</strong> by {{ book.book_author }} 
+                (Tag: {{ book.book_tag }} | Category: {{ book.book_category }})
+                
+                {% if book.is_available %}
+                    <span style="color: green; font-weight: bold;">[Available]</span>
+                {% else %}
+                    <span style="color: red; font-weight: bold;">[Checked Out]</span>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No books currently exist in the database. Go to the Admin panel to add some!</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
